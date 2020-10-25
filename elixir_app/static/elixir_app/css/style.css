@@ -1,0 +1,8 @@
+.input-file::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.input-file::before{
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+}

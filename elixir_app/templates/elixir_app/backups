@@ -1,0 +1,91 @@
+#models.py
+class Insert(models.Model):
+    filepaths = models.ImageField(upload_to='images/')
+    filename = models.CharField(max_length=100)
+    upload_date = models.DateTimeField(default=timezone.now)
+
+
+    #forms.py
+    class UploadImage(forms.ModelForm):
+    class Meta:
+        model = Insert
+        fields = ['filepaths','filename','upload_date']
+#prediction func
+
+    uploadform = UploadImage()
+
+    context = {'uploadform': uploadform}
+
+    if request.method == 'POST' and request.FILES['filename']:
+
+        uploadform = UploadImage(request.POST,request.FILES)
+
+        if uploadform.is_valid():
+
+            file_path = request.FILES['filename']
+
+            image_name = file_path.name
+
+            image_name = str(image_name)
+
+            if image_name.endswith(".jpg") or image_name.endswith(".png"):
+
+                new_file = Insert(filepaths=file_path, filename=image_name)
+
+                new_file.save()
+
+                # # import all import libraries
+                # import os
+                # import cv2
+                # import numpy as np 
+                # import pandas as pd
+                # import tensorflow as tf
+                # from tensorflow import keras
+                # from PIL import Image
+                # from keras.preprocessing.image import load_img
+                # from keras.preprocessing.image import img_to_array
+
+                #covert image into greyscale
+                # # load the image
+                # img = load_img(new_file)
+                 
+
+                # # convert to numpy array
+            
+                # # img = cv2.imread(new_file)
+                # # image_array = Image.fromarray(img, 'RGB')
+                # image_array = img_to_array(img)
+                # # resize_img = image_array.resize((50 , 50))
+                # # resize_img = np.array(resize_img).reshape(1,50,50,3)/255.
+
+                # #try to load the Model
+                # loaded_model = keras.models.load_model('/Model/saved_model.h5')
+                # print(loaded_model)
+
+                # #predictions
+                # prediction = loaded_model.predict(image_array)
+                # index = np.argmax(prediction)
+
+                # # labels dictionary
+                # labels_dict = {'Normal': 0, 'Cancer': 1}
+                # predictions = ''
+                # for class_name, class_code in labels_dict.items():  # for name, age in dictionary.iteritems():  (for Python 2.x)
+                #     if class_code == index.item():
+                #         predictions = class_name
+
+                # context = {'uploadform': uploadform,'prediction':predictions}
+                # return render(request,'elixir_app/elixir_dashboard.html',context=context)
+
+            else:
+                upladform = UploadImage()
+
+                format_message="Unsupported format, supported format are .png and .jpg "
+
+                return render(request,'elixir_app/elixir_dashboard.html',{'fmsg':format_message,'uploadform':upladform})
+
+        else:
+            return render(request,template_name="elixir_app/elixir_dashboard.html",context=context)
+
+    return render(request,template_name="elixir_app/elixir_dashboard.html",context=context)
+
+
