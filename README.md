@@ -1,5 +1,5 @@
 # THE ELIXIR REPOSITORY.
-**This is the repository for a Cancer Diagnosis web app system, that detects cancer from microscopic images, develop during the Tanzania AI-LAB  2020 hackathon**
+**This is the repository for a Cancer Diagnosis web app system, that detects cancer from microscopic images, developed during the Tanzania AI-LAB  2020 hackathon**
 
 
 To use the web app, you need to do the following:
