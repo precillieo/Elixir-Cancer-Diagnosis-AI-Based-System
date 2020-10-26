@@ -3,6 +3,7 @@
 
 
 To use the web app, you need to do the following:
+
 **- Create a python virtual environment and install the packages in the requirements.txt file.**
 
 **- clone the repository to your local device.**
