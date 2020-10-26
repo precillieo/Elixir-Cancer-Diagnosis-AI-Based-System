@@ -17,7 +17,7 @@ To use the web app, you need to do the following:
 
 
 
-However on some code-editors such as  Visual-studio code, one may encounter  an error as detailed below which is due to some of the visual studio code redistributables, as we encountered it this occured on a **Windows OS** device.
+However on some code-editors such as  Visual-studio code, one may encounter  an error as detailed below which is due to some of the visual studio code redistributables, as we encountered it, this occured on a **Windows OS** device.
 we **strongly recommend** the use of a virtual environment on developing and test this project:
 
 **Could not find the DLL(s) 'msvcp140.dll or msvcp140_1.dll'. TensorFlow requires that these DLLs be installed in a directory that is named in your %PATH% environment variable. You may install these DLLs by downloading "Microsoft C++ Redistributable for Visual Studio 2015, 2017 and 2019" for your platform from this URL: https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads**
