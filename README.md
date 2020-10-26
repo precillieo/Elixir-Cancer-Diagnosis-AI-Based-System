@@ -30,4 +30,4 @@ Futhermore, for **Linux OS** users, one may get an error **illegal instruction(c
 **pip install tensorflow==1.5**
 
 
-This will downgrade the cpu to device capability and prevent the app from crashing!!
+This will downgrade the cpu to device capability and prevent the **app from crashing!!**
