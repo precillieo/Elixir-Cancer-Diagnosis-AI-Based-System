@@ -21,6 +21,10 @@ However on some code-editors such as  Visual-studio code, one may encounter  an 
 **Could not find the DLL(s) 'msvcp140.dll or msvcp140_1.dll'. TensorFlow requires that these DLLs be installed in a directory that is named in your %PATH% environment variable. You may install these DLLs by downloading "Microsoft C++ Redistributable for Visual Studio 2015, 2017 and 2019" for your platform from this URL: https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads**
 
 Futhermore, for Linux OS users, one may get an error **illegal instruction(core-dumped)** to solve the error one would need to downgrade the tensorflow cpu by running the following commands on the terminal:
+
 **pip uninstall tensorflow**
+
 **pip install tensorflow==1.5**
+
+
 This will downgrade the cpu to device capability and prevent the app from crashing!!
