@@ -88,21 +88,21 @@ def PredictImage(request):
                 print("Modeling part now.............")
 
                 # import the necessary packages
-                # import keras
-                # from keras.preprocessing.image import img_to_array
-                # from keras.models import load_model
-                # from gpiozero import LEDBoard
-                # from gpiozero.tools import random_values
-                # from threading import Thread
-                # import numpy as np
-                # import tensorflow as tf
+                #import the necessary packages
+                import tensorflow as tf
+                import keras
+                from keras.preprocessing.image import img_to_array
+                from keras.models import load_model
+                from gpiozero import LEDBoard
+                from gpiozero.tools import random_values
+                from threading import Thread
+                import numpy as np
                 import h5py
-                # import imutils
-                # import time
-                # from PIL import Image
+                import imutils
+                import time
+                from PIL import Image
                 import cv2
-                # import os
-
+                import os
                 # load the image
                 print("Loading the image now.............")
                 image = cv2.imread(os.path.join(BASE_DIR, 'media/images/' + image_name))
